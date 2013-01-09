@@ -1,0 +1,58 @@
+plugin.tx_cookiecontrol {
+	view {
+		templateRootPath = {$plugin.tx_cookiecontrol.view.templateRootPath}
+		partialRootPath = {$plugin.tx_cookiecontrol.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_cookiecontrol.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_cookiecontrol.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_cookiecontrol._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-cookiecontrol table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-cookiecontrol table th {
+		font-weight:bold;
+	}
+
+	.tx-cookiecontrol table td {
+		vertical-align:top;
+	}
+)
+
+
+plugin.tx_cookiecontrol = USER_INT
+plugin.tx_cookiecontrol.settings{
+    templateFile = {$plugin.tx_cookiecontrol.theme.templateFile}
+    themepath = {$plugin.tx_cookiecontrol.theme.themepath}
+    themeSelect = {$plugin.tx_cookiecontrol.theme.themeselect}
+    iconPosition = {$plugin.tx_cookiecontrol.theme.iconposition}
+    iconType = {$plugin.tx_cookiecontrol.theme.icontype}
+    extra_options = onReady:function(){},onCookiesNotAllowed:function(){}
+        
+    blueTheme = {$plugin.tx_cookiecontrol.theme.bluetheme}
+    greyTheme = {$plugin.tx_cookiecontrol.theme.greytheme}
+    blackTheme ={$plugin.tx_cookiecontrol.theme.blacktheme}
+    defaultTheme = {$plugin.tx_cookiecontrol.theme.default}
+    consentModel = {$plugin.tx_cookiecontrol.theme.consentmodel}
+    
+    countrySelection = {$plugin.tx_cookiecontrol.theme.countryselection} 
+    countryField = {$plugin.tx_cookiecontrol.theme.countryfield}
+    analyticsCode = {$plugin.tx_cookiecontrol.theme.analyticscode}
+    customThemeSelect = {$plugin.tx_cookiecontrol.theme.theme} 
+     enableSession = {$plugin.tx_cookiecontrol.theme.enableSession} 
+}
+

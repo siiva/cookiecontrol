@@ -1,0 +1,68 @@
+plugin.tx_cookiecontrol {
+	view {
+		# cat=plugin.tx_cookiecontrol/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:cookiecontrol/Resources/Private/Templates/
+		# cat=plugin.tx_cookiecontrol/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:cookiecontrol/Resources/Private/Partials/
+		# cat=plugin.tx_cookiecontrol/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:cookiecontrol/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_cookiecontrol//a; type=string; label=Default storage PID
+		storagePid = 
+	}
+	
+  # cat=plugin.tx_cookiecontrol/file/3; type=text; label= Theme Path
+  theme.themepath = typo3conf/ext/cookiecontrol/
+  
+  # cat=plugin.tx_cookiecontrol/file/2; type=options[default,blue,grey,black]; label= Select your Theme
+  theme.themeselect = default
+  
+  # cat=plugin.tx_cookiecontrol//24; type=options[information_only,implicit,explicit]; label= Select Your Mode
+   theme.consentmodel = information_only
+  
+  # cat=plugin.tx_cookiecontrol/file/4; type=text; label= Blue Theme Location
+  theme.bluetheme = 
+  
+  # cat=plugin.tx_cookiecontrol/file/5; type=text; label= Grey Theme Location
+  theme.greytheme = 
+  
+  # cat=plugin.tx_cookiecontrol/file/6; type=text; label= Black Theme Location
+  theme.blacktheme =  
+  
+  # cat=plugin.tx_cookiecontrol/file/7; type=text; label= Default Theme
+  theme.default =  EXT:cookiecontrol/pi1/res/css/default.css
+
+ # cat=plugin.tx_cookiecontrol//8; type=options[left,right]; label= Specify position
+  theme.iconposition = left
+  
+   # cat=plugin.tx_cookiecontrol//9; type=options[triangle,diamond]; label= Specify shape
+   theme.icontype = triangle
+   
+    # cat=plugin.tx_cookiecontrol//10; type=boolean; label= Country selection
+   theme.countryselection = 
+   
+    # cat=plugin.tx_cookiecontrol//21; type=text; label= Country
+   theme.countryfield = 
+   
+   # cat=plugin.tx_cookiecontrol//22; type=text; label= Theme
+   theme.theme =
+   
+   # cat=plugin.tx_cookiecontrol//23; type=text; label= Goole Analytics Code
+   theme.analyticscode = 
+   
+   # cat=plugin.tx_cookiecontrol//24; type=boolean; label= Enable Theme Selection
+   theme.enableSession = 
+}
+
+
+
+###
+# Default TS-constants for cookiecontrol
+##
+module.cookiecontrol{
+ 
+
+}
+
+

@@ -1,0 +1,51 @@
+<f:layout name="Default" />
+<f:section name="main">
+<f:debug title="Debug of MyArray">{cookies}</f:debug>
+<script type="text/javascript">/*<![CDATA[*/
+/*]]>*/
+	var addSize = "{cookies.addSize}";
+	var title = "{cookies.titlelabel}";
+	var button  = "";
+	var buttonTextmore = "{cookies.readmore}";
+	var buttonTextless = "{cookies.readless}";
+	if(addSize > 0){
+		button = "<button class=\"ccc-expand\">{cookies.readmore}</button>";
+	}else{
+		button = "";
+	}
+</script>
+<script src="http://192.168.1.14/imageMake/typo3conf/ext/cookie_control/pi1/res/js/cookieControl-5.0.min.js" type="text/javascript"></script>
+<LINK href="http://192.168.1.14/imageMake/typo3conf/ext/cookie_control/pi1/res/css/default.css" rel="stylesheet" type="text/css">
+<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script type="text/javascript">
+/* <![CDATA[ */ /* ]]> */
+	cookieControl({
+		introText:"{cookies.introductory_text}",
+		fullText:"{cookies.additional_text}",
+		position:"{cookies.iconPosition}",
+		shape:"{cookies.iconType}", // triangle or diamond
+		startOpen:true,
+		autoHide:6000,
+		subdomains:false,
+		consentModel:"{cookies.consentModel}",
+		countries:"{cookies.countryField}", // Null or supply a list ['United Kingdom', 'Greece']
+		css:'',
+		html: '<div id="cccwr"><div id="ccc-state" class="ccc-pause"><div id="ccc-icon"><button><span>'
+			+ title
+			+ '</span></button></div><div class="ccc-widget"><div class="ccc-outer"><div class="ccc-inner"><h2>'
+			+ title
+			+ '</h2><div class="ccc-content"><p class="ccc-intro"></p><div class="ccc-expanded"></div><div id="ccc-cookies-switch" style="background-position-x: 0;"><a id="cctoggle" href="javascript:void(0)" style="background-position-x: 0;"><span class="toggle-off">{cookies.cookie_toggleoff}</span><span class="toggle-on">{cookies.cookie_toggleon}</span></a><input id="ccc-cookies-checkbox" name="1" type="checkbox" value="0" style="display:none;" /><label for="ccc-cookies-checkbox" style="display:none;">###COOKIE_OFFTEXT###</label></div><div id="ccc-implicit-warning">{cookies.cookie_preftext}</div><div id="ccc-explicit-checkbox"><label><input id="cchide-popup" type="checkbox" name="ccc-hide-popup" value="Y" /> ###COOKIE_CHECKBOXLABEL### <br /></label>###COOKIE_CHECKBOXTEXT###</div><p class="ccc-about"><small><a target="_blank" href="http://www.civicuk.com/cookie-law">about this tool</a></small></p><a class="ccc-icon" href="javascript:void(0)" target="_blank" title="About Cookie Control">About Cookie Control</a><button title="{cookies.close}" class="ccc-close">{cookies.close}</button></div></div></div>'
+			+ button + '</div></div></div>',
+		onAccept:function(cc){ccAddAnalytics();},onCookiesAllowed:function(){ccAddAnalytics()},{cookies.extra_options},
+		});
+        function ccAddAnalytics() {
+  	        jQuery.getScript("http://www.google-analytics.com/ga.js", function() {
+  	          var GATracker = _gat._createTracker('{cookies.analyticsCode}');
+  	          GATracker._trackPageview();
+  	        });
+  	    }
+
+        /*]]>*/
+</script>
+<script src="http://192.168.1.14/imageMake/typo3conf/ext/cookie_control/pi1/res/js/cookie_control-plugin.js" type="text/javascript"></script>
+</f:section>
